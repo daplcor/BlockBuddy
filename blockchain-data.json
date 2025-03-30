@@ -1,0 +1,296 @@
+{
+  "contracts": {
+    "kadena": [
+      {
+        "name": "Kadena Swap",
+        "type": "DEX",
+        "contractAddress": "kdlaunch.kdswap-exchange",
+        "module": "kdswap-exchange",
+        "description": "Kadena native DEX allowing swaps between KDA and other tokens on the Kadena blockchain.",
+        "documentation": "https://www.kdswap.exchange/",
+        "github": "not available",
+        "interface": [
+          "createPool",
+          "swapExactTokensForTokens",
+          "addLiquidity",
+          "removeLiquidity"
+        ],
+        "lastUpdated": "2025-03-15"
+      },
+      {
+        "name": "Mercatus",
+        "type": "DEX",
+        "contractAddress": "kaddex.exchange",
+        "module": "exchange",
+        "description": "The main Kadena native DEX allowing swaps between KDA and other tokens on the Kadena blockchain.",
+        "documentation": "https://mercatus.works/",
+        "github": "https://github.com/daplcor/ecko-dex-ui",
+        "interface": [
+          "createPool",
+          "swapExactTokensForTokens",
+          "addLiquidity",
+          "removeLiquidity"
+        ],
+        "lastUpdated": "2025-03-15"
+      },
+      {
+        "name": "Bro Dex",
+        "type": "DEX",
+        "contractAddress": "n_f6aa9328b19b8bf7e788603bd669dcf549e07575",
+        "module": "bro-dex-core-BRO-KDA-M",
+        "description": "The firsty fully on-chain native order book DEX allowing swaps between KDA and other tokens on the Kadena blockchain.",
+        "documentation": "https://dex.bro.pink/",
+        "github": "https://github.com/brothers-DAO/bro-dex",
+        "interface": ["swap"],
+        "lastUpdated": "2025-03-15"
+      },
+      {
+        "name": "Marmalade NG NFT Standard",
+        "type": "NFT",
+        "contractAddress": "marmade-v2.ledger",
+        "module": "marmalade-v2",
+        "description": "The standard NFT implementation on Kadena, providing a framework for creating, trading, and managing non-fungible tokens.",
+        "documentation": "https://docs.kadena.io/",
+        "github": "https://github.com/kadena-io/marmalade",
+        "interface": [
+          "create-token",
+          "create-collection",
+          "mint",
+          "transfer",
+          "burn"
+        ],
+        "lastUpdated": "2025-02-22"
+      },
+      {
+        "name": "Marmalade V2 NFT Standard",
+        "type": "NFT",
+        "contractAddress": "n_4e470a97222514a8662dd1219000a0431451b0ee.ledger",
+        "module": "marmalade-ng",
+        "description": "The standard NFT implementation on Kadena, providing a framework for creating, trading, and managing non-fungible tokens.",
+        "documentation": "https://marmalade-ng.readthedocs.io/en/latest",
+        "github": "https://github.com/Marmalade-NG/marmalade-ng",
+        "interface": [
+          "create-token",
+          "create-collection",
+          "mint",
+          "transfer",
+          "burn"
+        ],
+        "lastUpdated": "2025-02-22"
+      },
+      {
+        "name": "zUSD Stablecoin",
+        "type": "Token",
+        "contractAddress": "",
+        "module": "zUSD",
+        "description": "Kadena's native USD-pegged stablecoin, backed by a basket of assets and provided by the Flux team.",
+        "documentation": "https://runonflux.io",
+        "github": "not available",
+        "interface": ["transfer", "mint", "burn", "getReserves"],
+        "lastUpdated": "2025-03-01"
+      },
+      {
+        "name": "Tokengo",
+        "type": "Token Generator and IDE",
+        "contractAddress": "n_e309f0fa7cf3a13f93a8da5325cdad32790d2070",
+        "module": "ktg",
+        "description": "No code token launcher built for Kadena, with an IDE and token tracker",
+        "documentation": "https://tokengo-docs.netlify.app/documentation/create-simple-token/",
+        "github": "not available",
+        "interface": ["get-contract", "get-code", "add-contract"],
+        "lastUpdated": "2025-03-01"
+      }
+    ],
+    "ethereum": [
+      {
+        "name": "Uniswap V3",
+        "type": "DEX",
+        "contractAddress": "0x1F98431c8aD98523631AE4a59f267346ea31F984",
+        "description": "Advanced AMM with concentrated liquidity positions for more efficient trading.",
+        "documentation": "https://docs.uniswap.org/",
+        "github": "https://github.com/Uniswap/v3-core",
+        "interface": ["swap", "addLiquidity", "removeLiquidity", "collect"],
+        "lastUpdated": "2025-02-15"
+      }
+    ]
+  },
+  "concepts": {
+    "deFi": [
+      {
+        "name": "Automated Market Maker (AMM)",
+        "description": "A type of decentralized exchange protocol that uses a mathematical formula to price assets instead of using an order book. AMMs allow digital assets to be traded without permission and automatically by using liquidity pools.",
+        "examples": ["Uniswap", "Kadena Swap", "SushiSwap", "Curve"],
+        "advantages": [
+          "No need for matching buyers and sellers",
+          "Always available liquidity (as long as pool has funds)",
+          "Open and permissionless"
+        ],
+        "disadvantages": [
+          "Impermanent loss risk for liquidity providers",
+          "Slippage on large orders",
+          "Less efficient than order books for certain trading patterns"
+        ],
+        "relatedConcepts": [
+          "Liquidity Pool",
+          "Constant Product Formula",
+          "Impermanent Loss"
+        ]
+      },
+      {
+        "name": "Yield Farming",
+        "description": "Strategy where users lend or stake their cryptocurrencies in return for interest and additional token rewards.",
+        "examples": [
+          "Lending on Compound",
+          "Providing liquidity on Kadena Swap",
+          "Staking in Yearn Finance"
+        ],
+        "risks": [
+          "Smart contract vulnerabilities",
+          "Impermanent loss",
+          "Token value depreciation"
+        ],
+        "metrics": [
+          "APY (Annual Percentage Yield)",
+          "TVL (Total Value Locked)"
+        ],
+        "relatedConcepts": ["Liquidity Mining", "Staking", "LP Tokens"]
+      }
+    ],
+    "kadenaSpecific": [
+      {
+        "name": "Chainweb",
+        "description": "Kadena's unique consensus mechanism which uses multiple chains running in parallel to achieve high throughput. Each chain maintains its own blocks, miners, and state, but they all work together to form a single network.",
+        "benefits": [
+          "Horizontal scaling of transaction throughput",
+          "Maintains the security of Proof of Work",
+          "Increases decentralization by allowing more participants"
+        ],
+        "chainCount": "Currently 20 chains, with technical capability to expand",
+        "comparison": "Unlike traditional blockchains that must scale by increasing block size or decreasing block time, Chainweb scales by adding more chains.",
+        "relatedConcepts": [
+          "Braided Consensus",
+          "Mining",
+          "Cross-Chain Transfers"
+        ]
+      },
+      {
+        "name": "Pact Smart Contract Language",
+        "description": "Kadena's human-readable smart contract language designed specifically for blockchain applications with an emphasis on safety and verifiability.",
+        "features": [
+          "Turing-incomplete by design, making formal verification possible",
+          "Module system that allows code reuse and upgrades",
+          "Built-in support for capabilities-based security",
+          "Human-readable syntax similar to SQL and Lisp"
+        ],
+        "comparisonToSolidity": "Unlike Solidity, Pact is designed to be formally verifiable and prioritizes readability over flexibility, reducing the risk of vulnerabilities like reentrancy attacks.",
+        "resources": [
+          "https://docs.kadena.io/",
+          "https://github.com/kadena-io/pact"
+        ]
+      }
+    ]
+  },
+  "development": {
+    "kadena": {
+      "gettingStarted": {
+        "chainweb": "https://docs.kadena.io/guides/nodes",
+        "pactLanguage": "https://docs.kadena.io",
+        "wallet": "We need a guide link"
+      },
+      "tools": [
+        {
+          "name": "Pact Web IDE",
+          "url": "https://tokengo.fun/ide/",
+          "description": "Browser-based development environment for writing and testing Pact smart contracts."
+        },
+        {
+          "name": "Chainweaver",
+          "url": "https://chainweaver.kadena.io/",
+          "description": "Official desktop wallet with integrated development environment for Kadena."
+        },
+        {
+          "name": "Kadena.js",
+          "url": "https://github.com/kadena-community/kadena.js/",
+          "description": "JavaScript library for interacting with the Kadena blockchain."
+        }
+      ],
+      "tutorials": [
+        {
+          "title": "Building Your First Pact Contract",
+          "url": "https://docs.kadena.io",
+          "difficulty": "Beginner"
+        },
+        {
+          "title": "Creating a Fungible Token on Kadena",
+          "url": "need an article like medium",
+          "difficulty": "Intermediate"
+        },
+        {
+          "title": "Cross-Chain Transfers in Pact",
+          "url": "need an article like medium",
+          "difficulty": "Advanced"
+        }
+      ]
+    }
+  },
+  "faq": {
+    "kadena": [
+      {
+        "question": "What makes Kadena different from other blockchains?",
+        "answer": "Kadena combines the security of Bitcoin-style Proof of Work with the scalability of its unique Chainweb architecture, allowing it to process thousands of transactions per second while staying secure and decentralized. It also features Pact, a human-readable and formally verifiable smart contract language designed for safety."
+      },
+      {
+        "question": "How does Kadena achieve high transaction throughput?",
+        "answer": "Kadena uses a unique parallel-chain architecture called Chainweb that allows multiple chains to operate simultaneously, sharing security through a braided consensus mechanism. Each additional chain increases throughput linearly, allowing Kadena to scale horizontally."
+      },
+      {
+        "question": "What is Pact and why is it important?",
+        "answer": "Pact is Kadena's native smart contract language designed with safety as a priority. It's human-readable, Turing-incomplete by design, and includes features like module versioning and capability-based security. These design choices help prevent common smart contract vulnerabilities."
+      },
+      {
+        "question": "How do I transfer KDA between chains?",
+        "answer": "Cross-chain transfers on Kadena can be done using wallets. The process involves specifying the source chain, destination chain, and recipient address. Under the hood, this uses Pact's built-in cross-chain capabilities to securely move assets between Kadena's multiple chains."
+      },
+      {
+        "question": "What is Marmalade and how does it work?",
+        "answer": "Marmalade is Kadena's NFT standard that allows for the creation and trading of non-fungible tokens. Unlike many NFT standards, Marmalade separates token creation from policy, giving creators more flexibility. It also supports features like royalties, fractionalization, and complex trading policies."
+      }
+    ],
+    "general": [
+      {
+        "question": "What is Web3?",
+        "answer": "Web3 refers to the vision of a decentralized internet built on blockchain technology. Unlike Web2 (centralized platforms like Facebook and Google), Web3 aims to give users ownership of their data and digital assets, enable trustless transactions without intermediaries, and create open, permissionless systems."
+      },
+      {
+        "question": "What's the difference between a DEX and a CEX?",
+        "answer": "A DEX (Decentralized Exchange) operates without a central authority, using smart contracts to enable peer-to-peer trading. Users maintain control of their funds. A CEX (Centralized Exchange) is operated by a company that holds users' funds and matches orders, similar to traditional financial exchanges."
+      },
+      {
+        "question": "What is a smart contract?",
+        "answer": "A smart contract is a self-executing program stored on a blockchain that automatically enforces agreements between parties when predefined conditions are met. They enable trustless transactions without intermediaries and form the foundation for decentralized applications (dApps)."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "APY",
+      "definition": "Annual Percentage Yield. The real rate of return earned on an investment, taking into account the effect of compounding interest."
+    },
+    {
+      "term": "Gas",
+      "definition": "The fee required to execute transactions or run smart contracts on a blockchain network. On Kadena, gas fees are typically much lower than on Ethereum due to the scalable architecture."
+    },
+    {
+      "term": "Liquidity Pool",
+      "definition": "A collection of funds locked in a smart contract, used to facilitate decentralized trading, lending, or other financial activities."
+    },
+    {
+      "term": "Slippage",
+      "definition": "The difference between the expected price of a trade and the price at which the trade is executed, often occurring in low liquidity markets or with large orders."
+    },
+    {
+      "term": "TVL",
+      "definition": "Total Value Locked. The sum of all assets deposited in a protocol, used as a metric to measure adoption and interest in a DeFi project."
+    }
+  ]
+}
