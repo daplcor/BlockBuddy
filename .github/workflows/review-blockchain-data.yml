@@ -1,0 +1,33 @@
+name: Review Blockchain Data
+
+on:
+  push:
+    branches:
+      - main  
+  pull_request:
+    branches:
+      - main  
+
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest  
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'  
+
+    - name: Install dependencies
+      run: |
+        npm install -g jsonlint # Install JSON Lint to validate JSON files
+
+    # Validate blockchain data is correct
+    - name: Validate blockchain-data.json
+      run: |
+        # Run jsonlint to validate the JSON structure
+        jsonlint blockchain-data.json -q
+        echo "JSON validation passed!"
